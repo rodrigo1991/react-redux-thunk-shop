@@ -1,0 +1,13 @@
+{
+  "extends": ["airbnb-base",  "plugin:react/recommended","prettier","prettier/react"],
+  "plugins": ["react","prettier"],
+  "rules": {
+    "import/no-commonjs": [2, { "allowRequire": false }],
+    "prettier/prettier": ["error"]
+  },
+  "globals": {
+    "localStorage": true,
+    "fetch": true,
+    "window": true
+  } 
+}

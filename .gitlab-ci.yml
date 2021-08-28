@@ -1,0 +1,52 @@
+image: node:lts
+
+cache:
+  paths:
+    - ./node_modules/
+
+stages:
+  - setup
+  - lint
+  - test
+  - build
+  - deploy
+
+setup:
+  stage: setup
+  script:
+    - npm i
+  only:
+    - master
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+  only:
+    - master
+
+test:
+  stage: test
+  script:
+    - echo no test
+  only:
+    - master
+
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  script:
+    - echo nothing to deploy
+  dependencies:
+    - build
+  only:
+    - master

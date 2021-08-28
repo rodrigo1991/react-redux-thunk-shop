@@ -1,0 +1,4 @@
+node_modules
+build
+rabbit-db
+src/public

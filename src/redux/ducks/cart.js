@@ -42,9 +42,3 @@ export const add = cart => ({
 export const remove = product => ({ type: REMOVE, payload: product });
 
 export const removeLast = () => ({ type: REMOVE_LAST });
-
-// // side effects, only as applicable
-// // e.g. thunks, epics, etc
-// export function getWidget () {
-//   return dispatch => get('/widget').then(widget => dispatch(updateWidget(widget)))
-// }

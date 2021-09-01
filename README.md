@@ -1,6 +1,9 @@
-# Example project using react,redux and json-server
+# Example project using react,redux, redux-thunk and json-server
 
 The following project is an example/boilerplate using react and redux with ducks pattern simulating the backend server with json-server
+
+you can log in using admin:admin
+please have in mind that **_I do not suggeest_** this type of login appreach on production, it is just an example using thunk
 
 This is a `React` SPA website to run a local server and add some products to the cart
 

@@ -1,8 +1,7 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from "./App";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App.jsx';
 import store from './redux/configureStore';
@@ -12,7 +11,9 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <Router>
-        <App />
+        <Switch>
+          <App />
+        </Switch>
       </Router>
     </React.StrictMode>
   </Provider>,

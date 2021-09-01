@@ -24,11 +24,13 @@ import { useHistory } from 'react-router-dom';
 import useStyles from './headerStyle';
 import { setMobileOpen, setOpen } from '../../redux/ducks/menu';
 import Search from './Search.jsx';
+import { removeUser } from '../../redux/ducks/user';
 
 const MainBar = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.cart.products);
   const open = useSelector(state => state.menu.open);
+  const loggedUser = useSelector(state => state.user.loggedUser);
   const mobileOpen = useSelector(state => state.menu.mobileOpen);
   const menuId = 'primary-search-account-menu';
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -63,8 +65,7 @@ const MainBar = () => {
   const logout = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-    localStorage.removeItem('token');
-    history.push('/');
+    dispatch(removeUser());
   };
 
   const cart = () => {
@@ -83,7 +84,19 @@ const MainBar = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={logout}>Logout</MenuItem>
+      {loggedUser ? (
+        <>
+          <MenuItem onClick={logout}>Logout</MenuItem>
+        </>
+      ) : (
+        <MenuItem
+          onClick={() => {
+            history.push('/login');
+          }}
+        >
+          Login
+        </MenuItem>
+      )}
     </Menu>
   );
   const renderMobileMenu = (

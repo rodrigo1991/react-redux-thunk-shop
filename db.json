@@ -54,5 +54,12 @@
       "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Raspberry_Pi_4_Model_B_-_Side.jpg",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Raspberry_Pi_4_Model_B_-_Side.jpg"
     }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "roles": ["admin"]
+    }
   ]
 }
